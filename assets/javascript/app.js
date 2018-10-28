@@ -27,12 +27,12 @@ var questions = [{
 function timerStart () {
     clearInterval(countdown);
     countdown = setInterval(timerCountDown, 1000);
-}
+};
 
 function timerCountDown () {
     timer--;
     $("#timeRemains").text("Time Remaining: " + timer + " seconds");
-}
+};
 
 console.log(answers);
 
