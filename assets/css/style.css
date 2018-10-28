@@ -23,11 +23,16 @@ body {
     color: white;
     position: absolute;
     left: 0;
+    font-size: 2em;
     right: 0;
     margin: auto;
     text-align: center;
     margin-top: 200px;
     padding: 20px;
-    background-color: blue;
+    /* background-color: blue; */
     width: 30%;
+}
+
+#startButton:hover {
+    background-color: blue;
 }
