@@ -6,7 +6,7 @@ var correctAnswer = "";
 var incorrectAnswerTotal = 0;
 var correctAnswerTotal = 0;
 var unansweredTotal = 0;
-var timer = 30;
+var timer = 31;
 var countdown;
 
 //questions
@@ -18,8 +18,7 @@ var questions = [{
 }, {
     question: "Who was the killer in Friday the 13th part 1?",
     answers: ["Jason", "Jason's Mother", "Placeholder", "Another Placeholder"],
-    correctAnswer: "Jason's Mother"
-    
+    correctAnswer: "Jason's Mother"   
 } ]
 
 // functions
@@ -33,8 +32,6 @@ function timerCountDown () {
     timer--;
     $("#timeRemains").text("Time Remaining: " + timer + " seconds");
 };
-
-console.log(answers);
 
 $(document).ready(function() {
     $("#startButton").on("click", function() {
