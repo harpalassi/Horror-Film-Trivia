@@ -36,3 +36,9 @@ body {
     border: 2px white inset;
     padding: 20px;
 }
+
+#timeRemains {
+    margin-top: 50px;
+    color: white;
+    font-size: 1.5em;
+}

@@ -6,6 +6,8 @@ var correctAnswer = "";
 var incorrectAnswerTotal = 0;
 var correctAnswerTotal = 0;
 var unansweredTotal = 0;
+var timer = 30;
+var countdown;
 
 //questions
 
@@ -20,10 +22,23 @@ var questions = [{
     
 } ]
 
+// functions
+
+function timerStart () {
+    clearInterval(countdown);
+    countdown = setInterval(timerCountDown, 1000);
+}
+
+function timerCountDown () {
+    timer--;
+    $("#timeRemains").text("Time Remaining: " + timer + " seconds");
+}
+
 console.log(answers);
 
 $(document).ready(function() {
     $("#startButton").on("click", function() {
         $("#startButton").hide();
+        timerStart();
      });
 });
