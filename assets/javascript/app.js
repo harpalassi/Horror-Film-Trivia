@@ -24,6 +24,8 @@ var questions = [{
 console.log(questions[0].question)
 console.log(questions[1].question)
 console.log(questions[0].answers[0])
+
+
 // functions
 
 function timerStart () {
@@ -36,6 +38,10 @@ function timerCountDown () {
     $("#timeRemains").text("Time Remaining: " + timer + " seconds");
 };
 
+function stopTimer () {
+    clearInterval(countdown)
+}
+
 function firstQuestion () {
     $("#questionfield").text(questions[0].question);
 
@@ -46,6 +52,22 @@ function firstAnswers () {
     $("#answerfield").append("<p id='secondans'>"+ questions[0].answers[1] + "<p>")
     $("#answerfield").append("<p id='thirdans'>"+ questions[0].answers[2] + "<p>")
     $("#answerfield").append("<p id='fourthans'>"+ questions[0].answers[3] + "<p>")
+    $("#secondans").on("click", function () {
+        console.log("correct");
+        stopTimer();
+        $("#questionfield").text("You got it right!");
+        $("#answerfield").html("<img src='https://d13ezvd6yrslxm.cloudfront.net/wp/wp-content/images/Halloween-3-700x300.jpg'>");
+    });
+    $("#firstans").on("click", function () {
+        console.log("wrong");
+    });
+    $("#thirdans").on("click", function () {
+        console.log("wrong");
+    });
+    $("#fourthans").on("click", function () {
+        console.log("wrong");
+    });
+
 
 }
 
