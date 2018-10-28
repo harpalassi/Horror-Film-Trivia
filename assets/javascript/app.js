@@ -1,4 +1,11 @@
+//global variables 
 
+var question = "";
+var answers = [];
+var correctAnswer = "";
+var incorrectAnswerTotal = 0;
+var correctAnswerTotal = 0;
+var unansweredTotal = 0;
 
 //questions
 
@@ -14,3 +21,9 @@ var questions = [{
 } ]
 
 console.log(answers);
+
+$(document).ready(function() {
+    $("#startButton").on("click", function() {
+        
+     });
+});
