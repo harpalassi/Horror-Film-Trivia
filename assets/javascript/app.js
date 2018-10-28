@@ -36,9 +36,14 @@ function timerCountDown () {
     $("#timeRemains").text("Time Remaining: " + timer + " seconds");
 };
 
+function firstQuestion () {
+    $("#questionfield").text(questions[0].question);
+
+}
 $(document).ready(function() {
     $("#startButton").on("click", function() {
         $("#startButton").hide();
         timerStart();
+        setTimeout(firstQuestion, 1000);
      });
 });

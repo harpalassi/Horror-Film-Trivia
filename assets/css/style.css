@@ -42,3 +42,9 @@ body {
     color: white;
     font-size: 1.5em;
 }
+
+#questionfield {
+    color: white;
+    font-size: 1.25em;
+    margin-top: 25px;
+}
