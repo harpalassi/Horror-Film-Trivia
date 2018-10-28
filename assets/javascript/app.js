@@ -24,6 +24,6 @@ console.log(answers);
 
 $(document).ready(function() {
     $("#startButton").on("click", function() {
-        
+        $("#startButton").hide();
      });
 });
