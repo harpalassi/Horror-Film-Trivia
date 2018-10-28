@@ -2,3 +2,18 @@ body {
     background-image: url("../images/background.jpg");
     background-size: cover;
 }
+
+.container {
+    text-align: center;
+    background-color: #ee2e23;
+    margin: auto;
+    width: 75%;
+    margin-top: 20px;
+    padding-bottom: 550px;
+}
+
+#title {
+    font-style: italic;
+    font-size: 4em;
+    color: white;
+}
