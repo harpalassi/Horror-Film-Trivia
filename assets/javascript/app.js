@@ -57,8 +57,10 @@ function firstAnswers () {
         console.log("correct");
         stopTimer();
         $("#questionfield").text("You got it right!");
-        $("#answerfield").html("<img src='https://d13ezvd6yrslxm.cloudfront.net/wp/wp-content/images/Halloween-3-700x300.jpg'>");
+        $("#answerfield").html('<img src="assets/images/halloween-3.jpg" />');
     });
+
+    
     $("#firstans").on("click", function () {
         console.log("wrong");
     });
