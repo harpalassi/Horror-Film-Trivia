@@ -10,10 +10,23 @@ body {
     width: 75%;
     margin-top: 20px;
     padding-bottom: 550px;
+    position: relative;
 }
 
 #title {
     font-style: italic;
     font-size: 4em;
     color: white;
+}
+
+#startButton {
+    color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    margin-top: 200px;
+    background-color: blue;
+    width: 30%;
 }
