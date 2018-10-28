@@ -27,6 +27,7 @@ body {
     margin: auto;
     text-align: center;
     margin-top: 200px;
+    padding: 20px;
     background-color: blue;
     width: 30%;
 }
