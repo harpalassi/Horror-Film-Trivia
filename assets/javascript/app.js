@@ -23,7 +23,7 @@ var questions = [{
 
 console.log(questions[0].question)
 console.log(questions[1].question)
-console.log(questions[0].correctAnswer)
+console.log(questions[0].answers[0])
 // functions
 
 function timerStart () {
@@ -40,10 +40,20 @@ function firstQuestion () {
     $("#questionfield").text(questions[0].question);
 
 }
+
+function firstAnswers () {
+    $("#answerfield").append("<p id='firstans'>"+ questions[0].answers[0] + "<p>")
+    $("#answerfield").append("<p id='secondans'>"+ questions[0].answers[1] + "<p>")
+    $("#answerfield").append("<p id='thirdans'>"+ questions[0].answers[2] + "<p>")
+    $("#answerfield").append("<p id='fourthans'>"+ questions[0].answers[3] + "<p>")
+
+}
+
 $(document).ready(function() {
     $("#startButton").on("click", function() {
         $("#startButton").hide();
         timerStart();
         setTimeout(firstQuestion, 1000);
+        setTimeout(firstAnswers, 1000)
      });
 });
