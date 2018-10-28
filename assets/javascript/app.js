@@ -30,6 +30,7 @@ console.log(questions[0].answers[0])
 
 function timerStart () {
     clearInterval(countdown);
+    timer = 31;
     countdown = setInterval(timerCountDown, 1000);
 };
 
