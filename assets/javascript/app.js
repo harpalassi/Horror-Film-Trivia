@@ -21,6 +21,9 @@ var questions = [{
     correctAnswer: "Jason's Mother"   
 } ]
 
+console.log(questions[0].question)
+console.log(questions[1].question)
+console.log(questions[0].correctAnswer)
 // functions
 
 function timerStart () {
