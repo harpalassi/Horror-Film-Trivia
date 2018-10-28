@@ -35,4 +35,5 @@ body {
 
 #startButton:hover {
     background-color: blue;
+    border: 2px white inset;
 }
