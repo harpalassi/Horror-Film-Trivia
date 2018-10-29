@@ -16,7 +16,7 @@ var questions = [{
     answers: ["Halloween 4", "Halloween 3", "Halloween 6", "Halloween H20"],
     correctAnswer: "Halloween 3"
 }, {
-    question: "Who was the killer in Friday the 13th part 1?",
+    question: "Who was the killer in the first Friday the 13th film?",
     answers: ["Jason Voorhees", "Pamela Voorhees", "Tommy Jarvis", "Alice Hardy"],
     correctAnswer: "Jason's Mother"   
 } ]
@@ -31,7 +31,7 @@ console.log(questions[0].answers[0])
 function timerStart () {
     clearInterval(countdown);
     timer = 31;
-    countdown = setInterval(timerCountDown, 200);
+    countdown = setInterval(timerCountDown, 500);
 };
 
 function timerCountDown () {
@@ -57,7 +57,7 @@ function firstAnswers () {
         console.log("correct");
         stopTimer();
         $("#questionfield").text("You got it right!");
-        $("#answerfield").html('<img src="assets/images/halloween-3.jpg" />');
+        $("#answerfield").html('<img src="assets/images/halloween-3.jpg" class="img-fluid" />');
         correctAnswerTotal++;
         setTimeout(secondQuestion, 2000);
         setTimeout(secondAnswers, 2000);

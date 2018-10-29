@@ -15,8 +15,8 @@ body {
     border: 2px white inset;
     background-color: #ee2e23;
     margin: auto;
-    width: 75%;
-    height: 550px;
+    width: 85%;
+    height: 600px;
     margin-top: 20px;
     position: relative;
 }
@@ -39,9 +39,9 @@ body {
 }
 
 #startButton:hover {
-    width: 33%;
+    width: 50%;
     background-color: blue;
-    border: 2px white inset;
+    border: 1px white inset;
 }
 
 #firstans:hover, #secondans:hover, #thirdans:hover, #fourthans:hover {
