@@ -17,7 +17,7 @@ var questions = [{
     correctAnswer: "Halloween 3"
 }, {
     question: "Who was the killer in Friday the 13th part 1?",
-    answers: ["Jason", "Jason's Mother", "Placeholder", "Another Placeholder"],
+    answers: ["Jason Voorhees", "Pamela Voorhees", "Tommy Jarvis", "Alice Hardy"],
     correctAnswer: "Jason's Mother"   
 } ]
 
