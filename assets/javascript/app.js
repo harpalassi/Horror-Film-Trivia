@@ -59,6 +59,8 @@ function firstAnswers () {
         $("#questionfield").text("You got it right!");
         $("#answerfield").html('<img src="assets/images/halloween-3.jpg" />');
         correctAnswerTotal++;
+        setTimeout(secondQuestion, 2000);
+        setTimeout(secondAnswers, 2000);
     });
 
     $("#firstans").on("click", function () {
