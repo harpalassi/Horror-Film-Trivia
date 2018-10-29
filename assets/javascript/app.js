@@ -13,8 +13,8 @@ var gameOn = false;
 
 var questions = [{
     question: "Which Halloween film did not include Michael Myers?",
-    answers: ["Halloween 4", "Halloween 3", "Halloween 6", "Halloween H20"],
-    correctAnswer: "Halloween 3"
+    answers: ["Halloween 4", "Halloween III", "Halloween 6", "Halloween H20"],
+    correctAnswer: "Halloween III"
 }, {
     question: "Who was the killer in the first Friday the 13th film?",
     answers: ["Jason Voorhees", "Pamela Voorhees", "Tommy Jarvis", "Alice Hardy"],
@@ -91,7 +91,7 @@ function firstAnswers () {
 function wrongFirstQuestion () {
     stopTimer();
     incorrectAnswerTotal++;
-    $("#questionfield").text("You got it wrong! The correct answer is Halloween 3.");
+    $("#questionfield").text("You got it wrong! The correct answer is " + questions[0].correctAnswer);
     $("#answerfield").html('<img src="assets/images/halloween-3.jpg" />');
     setTimeout(secondQuestion, 2000);
     setTimeout(secondAnswers, 2000);
