@@ -8,7 +8,7 @@ var correctAnswerTotal = 0;
 var unansweredTotal = 0;
 var timer = 31;
 var countdown;
-var gameOn = false; 
+var timesUp = false; 
 //questions
 
 var questions = [{
@@ -37,6 +37,10 @@ function timerStart () {
 function timerCountDown () {
     timer--;
     $("#timeRemains").text("Time Remaining: " + timer + " seconds");
+    if (timer <= 0) {
+        stopTimer();
+        timesUp = true;
+    }
 };
 
 function stopTimer () {
@@ -45,6 +49,9 @@ function stopTimer () {
 
 function firstQuestion () {
     $("#questionfield").text(questions[0].question);
+    if (timesUp) {
+        alert("u lose");
+    }
 
 }
 
