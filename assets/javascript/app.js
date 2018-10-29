@@ -91,11 +91,12 @@ function wrongFirstQuestion () {
     incorrectAnswerTotal++;
     $("#questionfield").text("You got it wrong! The correct answer is Halloween 3.");
     $("#answerfield").html('<img src="assets/images/halloween-3.jpg" />');
-    setTimeout(secondQuestion, 1000);
-    setTimeout(secondAnswers, 1000);
+    setTimeout(secondQuestion, 2000);
+    setTimeout(secondAnswers, 2000);
 }
 
 function secondQuestion () {
+    timerStart();
     $("#questionfield").text(questions[1].question);
 
 }
