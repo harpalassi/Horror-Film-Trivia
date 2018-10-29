@@ -13,12 +13,13 @@ body {
 .container {
     text-align: center;
     border: 2px white inset;
-    background-color: #ee2e23;
+    background-color: #c94b2a;
     margin: auto;
     width: 85%;
     height: 600px;
     margin-top: 20px;
     position: relative;
+    opacity: .85;
 }
 
 #title {
