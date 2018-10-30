@@ -1,6 +1,7 @@
 //global variables 
 
 var question = "";
+var questionNumber = 0;
 var answers = [];
 var correctAnswer = "";
 var incorrectAnswerTotal = 0;
@@ -8,17 +9,21 @@ var correctAnswerTotal = 0;
 var unansweredTotal = 0;
 var timer = 31;
 var countdown;
-var timesUp = false; 
+var pic;
+var usersPick;
+
 //questions
 
 var questions = [{
     question: "Which Halloween film did not include Michael Myers?",
     answers: ["Halloween 4", "Halloween III", "Halloween 6", "Halloween H20"],
-    correctAnswer: "Halloween III"
+    correctAnswer: "Halloween III",
+    pic: "<img src='assets/images/halloween-3.jpg'>"
 }, {
     question: "Who was the killer in the first Friday the 13th film?",
     answers: ["Jason Voorhees", "Pamela Voorhees", "Tommy Jarvis", "Alice Hardy"],
-    correctAnswer: "Pamela Voorhees"   
+    correctAnswer: "Pamela Voorhees",   
+    pic: "assets/images/pamela.jpg" 
 } ]
 
 console.log(questions[0].question)
@@ -28,135 +33,72 @@ console.log(questions[0].answers[0])
 
 // functions
 
-// function timerStart () {
-//     clearInterval(countdown);
-//     timer = 31;
-//     countdown = setInterval(timerCountDown, 200);
-// };
+function timerStart () {
+    clearInterval(countdown);
+    timer = 31;
+    countdown = setInterval(timerCountDown, 500);
+};
 
-// function timerCountDown () {
-//     timer--;
-//     $("#timeRemains").text("Time Remaining: " + timer + " seconds");
-//     if (timer <= 0) {
-//         stopTimer();
-//         timesUp = true;
-//     }
+function timerCountDown () {
+    timer--;
+    $("#timeRemains").text("Time Remaining: " + timer + " seconds");
+    if (timer <= 0) {
+        stopTimer();
+        $("#questionfield").text("Time's Up! The correct answer is " + questions[questionNumber].correctAnswer);
+        $("#answerfield").html(questions[questionNumber].pic);
+    }
     
-// };
+};
 
 function stopTimer () {
     clearInterval(countdown)
 }
 
-function timerOne () {
-    timer = 31;
-    countdown = setInterval(function() {
-        timer--;
-        $("#timeRemains").text("Time Remaining: " + timer + " seconds");
-        if (timer <= 0) {
-            stopTimer();
-            $("#questionfield").text("Time's Up! The correct answer is " + questions[0].correctAnswer);
-            $("#answerfield").html('<img src="assets/images/halloween-3.jpg" class="img-fluid" />');
-            unansweredTotal++;
-            setTimeout(secondQuestion, 2000);
-            setTimeout(secondAnswers, 2000);
-            console.log(unansweredTotal);
+
+
+function QuestionsAndAnswers () {
+    $("#questionfield").text(questions[questionNumber].question);
+    $("#answerfield").html("<p class='answer'>"+ questions[questionNumber].answers[0] + "<p>" + 
+    "<p class='answer'>" + questions[questionNumber].answers[1] + "<p>" + 
+    "<p class='answer'>"+ questions[questionNumber].answers[2] + "<p>" + 
+    "<p class='answer'>"+ questions[questionNumber].answers[3] + "<p>")
+
+    $(".answer").on("click", function () {
+        usersPick = $(this).text();
+        if (usersPick === questions[questionNumber].correctAnswer) {
+            rightAnswer();
+        } else {
+            wrongAnswer();
         }
-    }, 1000);
-    
-}
-
-function timerTwo () {
-    timer = 31;
-    countdown = setInterval(function() {
-        timer--;
-        $("#timeRemains").text("Time Remaining: " + timer + " seconds");
-        if (timer <= 0) {
-            stopTimer();
-            $("#questionfield").text("Time's Up! The correct answer is " + questions[1].correctAnswer);
-            $("#answerfield").text("insert image here");
-            unansweredTotal++;
-            setTimeout(secondQuestion, 2000);
-            setTimeout(secondAnswers, 2000);
-            console.log(unansweredTotal);
-        }
-    }, 1000);
-
-}   
-
-
-function firstQuestion () {
-    
-   
-    $("#questionfield").text(questions[0].question);
-    firstAnswers();
-}
-
-function firstAnswers () {
-
-    $("#answerfield").append("<p id='firstans'>"+ questions[0].answers[0] + "<p>")
-    $("#answerfield").append("<p id='secondans'>"+ questions[0].answers[1] + "<p>")
-    $("#answerfield").append("<p id='thirdans'>"+ questions[0].answers[2] + "<p>")
-    $("#answerfield").append("<p id='fourthans'>"+ questions[0].answers[3] + "<p>")
-    $("#secondans").on("click", function () {
-        stopTimer();
-        $("#questionfield").text("You got it right!");
-        $("#answerfield").html('<img src="assets/images/halloween-3.jpg" class="img-fluid" />');
-        correctAnswerTotal++;
-        setTimeout(secondQuestion, 2000);
-        setTimeout(secondAnswers, 2000);
     });
-
-
-    $("#firstans").on("click", function () {
-        console.log("wrong");
-        wrongFirstQuestion();
-        
-    });
-
-    $("#thirdans").on("click", function () {
-        console.log("wrong");
-        wrongFirstQuestion();
-    });
-    
-    $("#fourthans").on("click", function () {
-        console.log("wrong");
-        wrongFirstQuestion();
-    });
-     
 
 }
 
+function rightAnswer() {
+    stopTimer();
+    $("#questionfield").text("You got it right!");
+    $("#answerfield").html(questions[questionNumber].pic);
+    next();
+}
 
-
-function wrongFirstQuestion () {
+function wrongAnswer () {
     stopTimer();
     incorrectAnswerTotal++;
-    $("#questionfield").text("You got it wrong! The correct answer is " + questions[0].correctAnswer);
-    $("#answerfield").html('<img src="assets/images/halloween-3.jpg" />');
-    setTimeout(secondQuestion, 2000);
-    setTimeout(secondAnswers, 2000);
+    $("#questionfield").text("You got it wrong! The correct answer is " + questions[questionNumber].correctAnswer);
+    $("#answerfield").html(questions[questionNumber].pic);
 }
 
-function secondQuestion () {
-    timerTwo();
-    $("#questionfield").text(questions[1].question);
-
-}
-
-function secondAnswers() {
-    $("#answerfield").empty();
-    $("#answerfield").append("<p id='firstans'>"+ questions[1].answers[0] + "<p>")
-    $("#answerfield").append("<p id='secondans'>"+ questions[1].answers[1] + "<p>")
-    $("#answerfield").append("<p id='thirdans'>"+ questions[1].answers[2] + "<p>")
-    $("#answerfield").append("<p id='fourthans'>"+ questions[1].answers[3] + "<p>")
-}
 
 
 $(document).ready(function() {
     $("#startButton").on("click", function() {
-        $("#startButton").hide();
-        setTimeout(firstQuestion, 1000);     
-        timerOne();
+        $(this).hide();
+        setTimeout(QuestionsAndAnswers, 1000);     
+        timerStart();
      });
 });
+
+function next() {
+    questionNumber++;
+    setTimeout(QuestionsAndAnswers, 2000);
+}

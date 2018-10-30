@@ -45,7 +45,7 @@ body {
     border: 1px white inset;
 }
 
-#firstans:hover, #secondans:hover, #thirdans:hover, #fourthans:hover {
+.answer:hover {
     width: 60%;
     background-color: blue;
     border: 2px white inset;
