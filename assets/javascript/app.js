@@ -88,15 +88,6 @@ function wrongAnswer () {
     setTimeout(next, 2000);
 }
 
-
-$(document).ready(function() {
-    $("#startButton").on("click", function() {
-        $(this).hide();
-        setTimeout(QuestionsAndAnswers, 1000);     
-        timerStart();
-     });
-});
-
 function next() {
     if (questionNumber < 1) 
     {
@@ -107,3 +98,14 @@ function next() {
         console.log("game over")
     }
 } 
+
+//start the game 
+
+$(document).ready(function() {
+    $("#startButton").on("click", function() {
+        $(this).hide();
+        setTimeout(QuestionsAndAnswers, 1000);     
+        timerStart();
+     });
+});
+
