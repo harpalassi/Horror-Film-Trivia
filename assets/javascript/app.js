@@ -24,6 +24,11 @@ var questions = [{
     answers: ["Jason Voorhees", "Pamela Voorhees", "Tommy Jarvis", "Alice Hardy"],
     correctAnswer: "Pamela Voorhees",   
     pic: "<img src='assets/images/pamela.jpg'>" 
+}, {
+    question: "xx?",
+    answers: ["x", "y", "z", "l"],
+    correctAnswer: "z"
+
 } ]
 
 console.log(questions[0].answers[0])
@@ -89,7 +94,7 @@ function wrongAnswer () {
 }
 
 function next() {
-    if (questionNumber < 1) 
+    if (questionNumber < 2) 
     {
         questionNumber++;
         setTimeout(QuestionsAndAnswers, 2000);
