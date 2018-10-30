@@ -26,8 +26,6 @@ var questions = [{
     pic: "<img src='assets/images/pamela.jpg'>" 
 } ]
 
-console.log(questions[0].question)
-console.log(questions[1].question)
 console.log(questions[0].answers[0])
 
 
@@ -46,21 +44,20 @@ function timerCountDown () {
         stopTimer();
         $("#questionfield").text("Time's Up! The correct answer is " + questions[questionNumber].correctAnswer);
         $("#answerfield").html(questions[questionNumber].pic);
+        unansweredTotal++;
         next();
     }
     
 };
 
 function stopTimer () {
-    clearInterval(countdown)
+    clearInterval(countdown);
 }
-
-
 
 function QuestionsAndAnswers () {
     $("#questionfield").text(questions[questionNumber].question);
     $("#answerfield").html("<p class='answer'>"+ questions[questionNumber].answers[0] + "<p>" + 
-    "<p class='answer'>" + questions[questionNumber].answers[1] + "<p>" + 
+    "<p class='answer'>"+ questions[questionNumber].answers[1] + "<p>" + 
     "<p class='answer'>"+ questions[questionNumber].answers[2] + "<p>" + 
     "<p class='answer'>"+ questions[questionNumber].answers[3] + "<p>")
 
@@ -79,7 +76,8 @@ function rightAnswer() {
     stopTimer();
     $("#questionfield").text("You got it right!");
     $("#answerfield").html(questions[questionNumber].pic);
-    next();
+    setTimeout(next, 2000);
+
 }
 
 function wrongAnswer () {
@@ -87,7 +85,7 @@ function wrongAnswer () {
     incorrectAnswerTotal++;
     $("#questionfield").text("You got it wrong! The correct answer is " + questions[questionNumber].correctAnswer);
     $("#answerfield").html(questions[questionNumber].pic);
-    next();
+    setTimeout(next, 2000);
 }
 
 
@@ -106,6 +104,6 @@ function next() {
         setTimeout(QuestionsAndAnswers, 2000);
         setTimeout(timerStart, 1000);
     } else {
-        alert("game over")
+        console.log("game over")
     }
 } 
