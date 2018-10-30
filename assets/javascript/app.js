@@ -25,9 +25,10 @@ var questions = [{
     correctAnswer: "Pamela Voorhees",   
     pic: "<img src='assets/images/pamela.jpg'>" 
 }, {
-    question: "xx?",
-    answers: ["x", "y", "z", "l"],
-    correctAnswer: "z"
+    question: "Which horror film did Jamie Lee Curtis' mother star in?",
+    answers: ["Sleepaway Camp", "Tourist Trap", "Psycho", "Repulsion"],
+    correctAnswer: "Psycho",
+    pic: "<img src='assets/images/psycho.jpg'>" 
 
 } ]
 
