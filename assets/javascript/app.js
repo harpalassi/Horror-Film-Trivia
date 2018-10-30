@@ -23,7 +23,7 @@ var questions = [{
     question: "Who was the killer in the first Friday the 13th film?",
     answers: ["Jason Voorhees", "Pamela Voorhees", "Tommy Jarvis", "Alice Hardy"],
     correctAnswer: "Pamela Voorhees",   
-    pic: "assets/images/pamela.jpg" 
+    pic: "<img src='assets/images/pamela.jpg'>" 
 } ]
 
 console.log(questions[0].question)
@@ -36,7 +36,7 @@ console.log(questions[0].answers[0])
 function timerStart () {
     clearInterval(countdown);
     timer = 31;
-    countdown = setInterval(timerCountDown, 500);
+    countdown = setInterval(timerCountDown, 1000);
 };
 
 function timerCountDown () {
@@ -46,6 +46,7 @@ function timerCountDown () {
         stopTimer();
         $("#questionfield").text("Time's Up! The correct answer is " + questions[questionNumber].correctAnswer);
         $("#answerfield").html(questions[questionNumber].pic);
+        next();
     }
     
 };
@@ -86,8 +87,8 @@ function wrongAnswer () {
     incorrectAnswerTotal++;
     $("#questionfield").text("You got it wrong! The correct answer is " + questions[questionNumber].correctAnswer);
     $("#answerfield").html(questions[questionNumber].pic);
+    next();
 }
-
 
 
 $(document).ready(function() {
@@ -99,6 +100,12 @@ $(document).ready(function() {
 });
 
 function next() {
-    questionNumber++;
-    setTimeout(QuestionsAndAnswers, 2000);
-}
+    if (questionNumber < 1) 
+    {
+        questionNumber++;
+        setTimeout(QuestionsAndAnswers, 2000);
+        setTimeout(timerStart, 1000);
+    } else {
+        alert("game over")
+    }
+} 
