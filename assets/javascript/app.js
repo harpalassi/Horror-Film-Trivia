@@ -80,6 +80,7 @@ function QuestionsAndAnswers () {
 
 function rightAnswer() {
     stopTimer();
+    correctAnswerTotal++
     $("#questionfield").text("You got it right!");
     $("#answerfield").html(questions[questionNumber].pic);
     setTimeout(next, 2000);
