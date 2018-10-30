@@ -49,19 +49,16 @@ function stopTimer () {
 
 function firstQuestion () {
     $("#questionfield").text(questions[0].question);
-    if (timesUp) {
-        alert("u lose");
-    }
 
 }
 
 function firstAnswers () {
+
     $("#answerfield").append("<p id='firstans'>"+ questions[0].answers[0] + "<p>")
     $("#answerfield").append("<p id='secondans'>"+ questions[0].answers[1] + "<p>")
     $("#answerfield").append("<p id='thirdans'>"+ questions[0].answers[2] + "<p>")
     $("#answerfield").append("<p id='fourthans'>"+ questions[0].answers[3] + "<p>")
     $("#secondans").on("click", function () {
-        console.log("correct");
         stopTimer();
         $("#questionfield").text("You got it right!");
         $("#answerfield").html('<img src="assets/images/halloween-3.jpg" class="img-fluid" />');
@@ -69,6 +66,7 @@ function firstAnswers () {
         setTimeout(secondQuestion, 2000);
         setTimeout(secondAnswers, 2000);
     });
+
 
     $("#firstans").on("click", function () {
         console.log("wrong");
@@ -85,15 +83,18 @@ function firstAnswers () {
         console.log("wrong");
         wrongFirstQuestion();
     });
+     
+   
 
-    // if (gameOn === true && timer <= 0) {
+    // if (timesUp === true && timer <= 0) {
     //     // $("#questionfield").text("time's up");
     //     // $("#answerfield").text("the correct answer was halloween 3")
 
     // }
 
+      }
 
-}
+
 
 function wrongFirstQuestion () {
     stopTimer();
