@@ -13,7 +13,7 @@ body {
 
 .container {
     text-align: center;
-    border: 2px white inset;
+    border: 10px silver inset;
     background-color: #c94b2a;
     margin: auto;
     width: 85%;
