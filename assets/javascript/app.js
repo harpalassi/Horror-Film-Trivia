@@ -28,28 +28,49 @@ console.log(questions[0].answers[0])
 
 // functions
 
-function timerStart () {
-    clearInterval(countdown);
-    timer = 31;
-    countdown = setInterval(timerCountDown, 500);
-};
+// function timerStart () {
+//     clearInterval(countdown);
+//     timer = 31;
+//     countdown = setInterval(timerCountDown, 200);
+// };
 
-function timerCountDown () {
-    timer--;
-    $("#timeRemains").text("Time Remaining: " + timer + " seconds");
-    if (timer <= 0) {
-        stopTimer();
-        timesUp = true;
-    }
-};
+// function timerCountDown () {
+//     timer--;
+//     $("#timeRemains").text("Time Remaining: " + timer + " seconds");
+//     if (timer <= 0) {
+//         stopTimer();
+//         timesUp = true;
+//     }
+    
+// };
 
 function stopTimer () {
     clearInterval(countdown)
 }
 
-function firstQuestion () {
-    $("#questionfield").text(questions[0].question);
+function timerOne () {
+    timer = 31;
+    countdown = setInterval(function() {
+        timer--;
+        $("#timeRemains").text("Time Remaining: " + timer + " seconds");
+        if (timer <= 0) {
+            stopTimer();
+            $("#questionfield").text("Time's Up! The correct answer is " + questions[0].correctAnswer);
+            $("#answerfield").html('<img src="assets/images/halloween-3.jpg" class="img-fluid" />');
+            unansweredTotal++;
+            setTimeout(secondQuestion, 2000);
+            setTimeout(secondAnswers, 2000);
+            console.log(unansweredTotal);
+        }
+    }, 1000);
+    
+}
 
+function firstQuestion () {
+    
+   
+    $("#questionfield").text(questions[0].question);
+    firstAnswers();
 }
 
 function firstAnswers () {
@@ -84,15 +105,8 @@ function firstAnswers () {
         wrongFirstQuestion();
     });
      
-   
 
-    // if (timesUp === true && timer <= 0) {
-    //     // $("#questionfield").text("time's up");
-    //     // $("#answerfield").text("the correct answer was halloween 3")
-
-    // }
-
-      }
+}
 
 
 
@@ -123,8 +137,7 @@ function secondAnswers() {
 $(document).ready(function() {
     $("#startButton").on("click", function() {
         $("#startButton").hide();
-        timerStart();
-        setTimeout(firstQuestion, 1000);
-        setTimeout(firstAnswers, 1000)
+        setTimeout(firstQuestion, 1000);     
+        timerOne();
      });
 });
