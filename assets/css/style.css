@@ -7,14 +7,15 @@ body {
     background-image: url("../images/background.jpg");
     background-size: cover;
     background-attachment: fixed;
-    font-family: Verdana;
+    font-family: 'Lora', serif;
 
 }
 
+
 .container {
     text-align: center;
-    border: 10px silver inset;
-    background-color: #c94b2a;
+    border: 5px silver inset;
+    background-color: #864aff;
     margin: auto;
     width: 85%;
     height: 600px;
@@ -23,11 +24,18 @@ body {
     opacity: .85;
 }
 
+@media only screen and (max-width: 500px) {
+    .container {
+        height: 775px;
+    }
+}
+
 #title {
-    font-weight: 900;
+    font-weight: 500;
     font-style: italic;
     font-size: 4em;
-    color: greenyellow;
+    font-family: 'Montserrat', sans-serif;
+    color:#26fdcb;
 }
 
 #startButton {
@@ -47,7 +55,7 @@ body {
     border: 1px white inset;
 }
 
-.answer:hover {
+.answer:hover, #reset-button:hover {
     width: 60%;
     background-color: blue;
     border: 2px white inset;
@@ -55,9 +63,13 @@ body {
     
 }
 
+.row #questionfield {
+    color: #26fdcb;
+}
+
 #timeRemains {
     margin-top: 20px;
-    color: white;
+    color: #ececec;
     font-size: 1.5em;
 }
 
