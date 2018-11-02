@@ -7,7 +7,7 @@ var correctAnswer = "";
 var incorrectAnswerTotal = 0;
 var correctAnswerTotal = 0;
 var unansweredTotal = 0;
-var timer = 31;
+var timer = 16;
 var countdown;
 var pic;
 var usersPick;
@@ -71,7 +71,7 @@ console.log(questions[0].answers[0])
 
 function timerStart () {
     clearInterval(countdown);
-    timer = 31;
+    timer = 16;
     countdown = setInterval(timerCountDown, 1000);
 };
 
@@ -139,8 +139,10 @@ function next() {
 } 
 
 function gameEnd() {
+    var percentScore = Math.round((correctAnswerTotal / 8) * 100);
     $("#questionfield").text("All Done! Here's how you did...");
-    $("#answerfield").html("<p>Correct Answers: " + correctAnswerTotal + "<p>" + 
+    $("#answerfield").html("<p>You scored: " + percentScore + "%!</p>" +
+    "<p>Correct Answers: " + correctAnswerTotal + "<p>" + 
     "<p>Incorrect Answers: " + incorrectAnswerTotal + "<p>" +
     "<p>Unanswered: " + unansweredTotal + "<p>" +
     "<br><p id='reset-button'>Click here to play again...</p>"
@@ -151,7 +153,7 @@ function gameEnd() {
         incorrectAnswerTotal = 0;
         unansweredTotal = 0;
         questionNumber = 0;
-        timer = 31;
+        timer = 16;
         setTimeout(questionsAndAnswers, 1000);     
         timerStart();
     })

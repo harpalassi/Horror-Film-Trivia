@@ -28,6 +28,10 @@ body {
     .container {
         height: 775px;
     }
+
+    #title {
+        font-size: 3em;
+    }
 }
 
 #title {
