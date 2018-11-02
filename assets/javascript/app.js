@@ -32,8 +32,8 @@ var questions = [{
 
 },{
     question: "Which of the following is NOT directed by Dario Argento?",
-    answers: ["Demons 2", "Four Flies on Grey Velvet", "Opera", "Inferno"],
-    correctAnswer: "Demons 2",
+    answers: ["Demons", "Four Flies on Grey Velvet", "Opera", "Inferno"],
+    correctAnswer: "Demons",
     pic: "<img src='assets/images/demons2.jpg' class='img-fluid'>" 
 
 },
@@ -141,7 +141,7 @@ function next() {
 function gameEnd() {
     var percentScore = Math.round((correctAnswerTotal / 8) * 100);
     $("#questionfield").text("All Done! Here's how you did...");
-    $("#answerfield").html("<p>You scored: " + percentScore + "%!</p>" +
+    $("#answerfield").html("<p>You scored: " + "<span id='percent'>" + percentScore + "%</span>" + "!</p>" +
     "<p>Correct Answers: " + correctAnswerTotal + "<p>" + 
     "<p>Incorrect Answers: " + incorrectAnswerTotal + "<p>" +
     "<p>Unanswered: " + unansweredTotal + "<p>" +

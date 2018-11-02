@@ -42,6 +42,10 @@ body {
     color:#26fdcb;
 }
 
+#percent {
+    color: #26fdcb;
+}
+
 #startButton {
     font-size: 2em;
     color: white;
