@@ -38,7 +38,7 @@ var questions = [{
 
 },
 {
-    question: "Which of the following is set at a Summer Camp?",
+    question: "Which of the following takes place at summer camp?",
     answers: ["Pieces", "Stage Fright", "The Burning", "Happy Birthday To Me"],
     correctAnswer: "The Burning",
     pic: "<img src='assets/images/theburning.jpg' class='img-fluid'>" 
