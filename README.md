@@ -1,4 +1,4 @@
-# HORROR TRIVIA GAME 
+# HORROR FILM TRIVIA 
 
 Think you know slasher films? Try your shot at this multiple-choice trivia game.
 
