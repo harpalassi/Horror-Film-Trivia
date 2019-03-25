@@ -4,7 +4,7 @@ Think you know slasher films? Try your shot at this multiple-choice trivia game 
 
 ![screenshot](assets/images/screenshot.png)
 
-🚀 Deployed at: http://harpalassi.github.io/Horror-Trivia-Game
+🚀 Deployed at: http://harpalassi.github.io/horror-film-trivia
 
 ## Functionality
 
